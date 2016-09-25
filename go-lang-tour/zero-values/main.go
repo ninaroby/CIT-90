@@ -9,3 +9,13 @@ func main() {
 	var s string
 	fmt.Printf("%v %v %v %q\n", i, f, b, s)
 }
+
+/* Variables declared without an explicit initial value are given their zero value.
+
+The zero value is:
+
+0 for numeric types,
+false for the boolean type, and
+"" (the empty string) for strings.
+
+*/
