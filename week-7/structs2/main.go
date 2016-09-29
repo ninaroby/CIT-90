@@ -17,15 +17,19 @@ type jungleAnimal struct {
 
 func main() {
 	animal1 := jungleAnimal{
-		animal{"Nelly", "grey", 4, 2},
+		animal{
+			"Nelly",
+			"grey",
+			4,
+			2,
+		},
 		"large",
 		true,
 	}
 	fmt.Println(animal1)
+	fmt.Println(animal1.isEl())
 }
 
-func elephant() {
-	if trunk == true {
-		fmt.println("I am an elephant")
-	}
+func (ja jungleAnimal) isEl() bool {
+	return ja.trunk == true
 }
