@@ -16,7 +16,6 @@ func main() {
 	http.HandleFunc("/about", about)
 	http.HandleFunc("/contact", contact)
 	http.HandleFunc("/apply", apply)
-	http.HandleFunc("/process", applyProcess)
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -36,11 +35,13 @@ func contact(w http.ResponseWriter, req *http.Request) {
 }
 
 func apply(w http.ResponseWriter, req *http.Request) {
-	err := tpl.ExecuteTemplate(w, "apply.gohtml", nil)
-	handleError(w, err)
-}
 
-func applyProcess(w http.ResponseWriter, req *http.Request) {
+	if req.Method == http.MethodPost {
+		err := tpl.ExecuteTemplate(w, "applyProcess.gohtml", nil)
+		handleError(w, err)
+		return
+	}
+
 	err := tpl.ExecuteTemplate(w, "applyProcess.gohtml", nil)
 	handleError(w, err)
 }
