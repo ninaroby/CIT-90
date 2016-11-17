@@ -3,17 +3,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/public/css/main.css">
     {{if .FirstName}}
     <title>{{.FirstName}}</title>
     {{else}}
     <title>{{.Title}}</title>
     {{end}}
+
 </head>
-<link rel="stylesheet" href="/public/css/main.css">
+
+
 <body>
 {{end}}
 
 {{define "footer"}}
+<img src="../public/images/car.jpeg" alt="" />
 </body>
 </html>
 {{end}}
